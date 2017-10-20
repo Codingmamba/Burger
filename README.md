@@ -25,8 +25,8 @@ App Setup
 Require the following npm packages inside of the server.js file:
 
 
-        - <b>express</b> <br>
-        - method-override <br>
+        - express
+        - method-override
         - body-parser
 
 
@@ -40,10 +40,10 @@ Require the following npm packages inside of the server.js file:
 - Switch to or use the burgers_db. <br>
 - Create a burgers table with these fields:
 
---- id: an auto incrementing int that serves as the primary key. <br>
---- burger_name: a string. <br>
---- devoured: a boolean. <br>
---- date: a TIMESTAMP.
+-- id: an auto incrementing int that serves as the primary key. <br>
+-- burger_name: a string. <br>
+-- devoured: a boolean. <br>
+-- date: a TIMESTAMP.
 
 
 1. Still in the db folder, create a seeds.sql file. In this file, write insert queries to populate the burgers table with at least three entries.
@@ -56,7 +56,7 @@ Require the following npm packages inside of the server.js file:
 - Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.
 - Close out of the MySQL command line tool: exit.
 
-Config Setup
+<b>Config Setup</b>
 
 
 1. Inside your burger directory, create a folder named config.
@@ -71,13 +71,13 @@ Config Setup
 
 - In the <b>orm.js</b> file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 
---- <b>selectAll()</b><br>
---- insertOne()</b><br>
---- updateOne()</b>
+-- <b>selectAll()</b><br>
+-- <b>insertOne()</b><br>
+-- <b>updateOne()</b>
 
 - Export the ORM object in module.exports.
 
-Model setup
+<b>Model setup</b>
 
 1. Inside your <b>burger</b> directory, create a folder named models.
 
@@ -93,8 +93,8 @@ Model setup
 - In controllers, create the burgers_controller.js file.
 - Inside the burgers_controller.js file, import the following:
 
---- Express
---- burger.js
+-- Express <br>
+-- burger.js
 
 1. Create the router for the app, and export the router at the end of your file.
 
@@ -103,7 +103,7 @@ Model setup
 1. Inside your burger directory, create a folder named views.
 - Create the index.handlebars file inside views directory.
 - Create the layouts directory inside views directory.
---- Create the main.handlebars file inside layouts directory.
---- Setup the main.handlebars file so it's able to be used by Handlebars.
---- Setup the index.handlebars to have the template that Handlebars can render onto.
---- Create a button in index.handlebars that will submit the user input into the database.
+-- Create the main.handlebars file inside layouts directory.<br>
+-- Setup the main.handlebars file so it's able to be used by Handlebars. <br>
+-- Setup the index.handlebars to have the template that Handlebars can render onto. <br>
+-- Create a button in index.handlebars that will submit the user input into the database.
