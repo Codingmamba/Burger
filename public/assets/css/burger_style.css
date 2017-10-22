@@ -5,10 +5,25 @@ body {
     text-align: center;
 }
 .title {
-    color: white;
-font-family: 'Shadows Into Light', cursive;
+    color: #ebb433;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 10px;
 }
 
 textarea {
     text-align: center;
+    border-radius: 10px;
+}
+
+#submit {
+    background: #a8d9ac;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    width: 150px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background: #ebb433;
 }
