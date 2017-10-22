@@ -1,0 +1,14 @@
+body {
+    background: #a8d9ac;
+}
+#burger {
+    text-align: center;
+}
+.title {
+    color: white;
+font-family: 'Shadows Into Light', cursive;
+}
+
+textarea {
+    text-align: center;
+}
