@@ -11,11 +11,11 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// app.get('/', function(req, res) {
-//   res.json("HELLO");
-// });
+app.get('/', function(req, res) {
+  res.json("HELLO");
+});
 
-let routes = require('./controllers/burgers_controller.js');
+let routes = require('./controllers/burgers_controllers.js');
 app.use('/', routes);
 
 console.log("Yes");;
