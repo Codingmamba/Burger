@@ -9,4 +9,3 @@ devoured BOOLEAN,
 date TIMESTAMP,
 PRIMARY KEY(id)
 );
-

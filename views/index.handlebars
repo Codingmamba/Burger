@@ -10,32 +10,92 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/assets/css/burger_style.css">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Indie+Flower|Lobster|Shadows+Into+Light" rel="stylesheet">
+
+    <style>
+        body {
+    background: #a8d9ac;
+}
+#burger {
+    text-align: center;
+}
+#display {
+    background: white;
+    width: 20%;
+    height: 35px;
+    margin-right: 400px;
+}
+
+.title {
+    color: #ebb433;
+    font-family: 'Shadows Into Light', cursive;
+    margin-bottom: 10px;
+}
+
+textarea {
+    text-align: center;
+    border-radius: 10px;
+}
+
+#burger-entry {
+    margin-left: 520px;
+    color: white;
+}
+
+#submit {
+    background: #a8d9ac;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    width: 150px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background: #ebb433;
+}
+
+    </style>
+
 </head>
 <body>	
     <div align="center">
-    <img src="../public/assets/img/burger.jpg" alt="carton image of a burger" width="250" id="burger">
+    <img src="https://previews.123rf.com/images/annadelacruz/annadelacruz1507/annadelacruz150700018/42852674-Cute-cartoon-cheeseburger-with-double-cheese-Burger-with-salad--Stock-Photo.jpg" alt="carton image of a burger" width="250" id="burger">
     
     <h1 class="title">Eat-Da-BurGer</h1>
+
+    <div>
+  {{#each burgers}}
+       <p id="display">{{this.id}}. {{this.burger_name}}</p><button>Devour</button>
+  {{/each}}
+    </div>
+
+<br>
 
     <div onClick="but()" id="info">
     <!-- displays burger entry -->
     <div id="burger-entry" align="left"></div><div id="button"></div>
     </div>
-    <br>
 
-    <textarea id="input" cols="20" rows="3" placeholder="Enter in a Burger"></textarea>
+    <br>
+    <form action="/" method="POST">
+    <textarea id="input" type="text" name="burger_name" cols="20" rows="3" placeholder="Enter in a Burger"></textarea>
     
     <br>
 
     <button onClick="burgerFunction()" id="submit">Submit</button>
+    </form>
         
     </div>
+
+    <br>
+    <br>
 
     <script type="text/javascript">
         function burgerFunction() {
             let input = document.getElementById("input").value;
             document.getElementById("burger-entry").innerHTML = input;
-            
+
             let button = document.createElement("button");
             button.innerHTML = "Devour";
             let body = document.getElementById('button');

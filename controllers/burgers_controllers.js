@@ -14,9 +14,9 @@ router.get('/', function(req, res) {
       });
     });
 
-render.post("/", function(req, res) {
-    res.send('You sent, ' + req.body.task);
-    connection.query("INSERT INTO burgers (task) VALUES (?)", [req.body.task], function(err, result) {
+router.post("/", function(req, res) {
+    res.render('You sent, ' + req.body.burger_name);
+    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], function(err, result) {
         if (err) throw err;
     
         res.redirect("/");
