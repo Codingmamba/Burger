@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eat-Da-Burger</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/assets/css/burger_style.css">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Indie+Flower|Lobster|Shadows+Into+Light" rel="stylesheet">
@@ -15,16 +17,34 @@
     
     <h1 class="title">Eat-Da-BurGer</h1>
 
-    <textarea name="box" id="" cols="20" rows="3" placeholder="Enter in a Burger"></textarea>
+    <div onClick="but()" id="info">
+    <!-- displays burger entry -->
+    <div id="burger-entry" align="left"></div><div id="button"></div>
+    </div>
+    <br>
+
+    <textarea id="input" cols="20" rows="3" placeholder="Enter in a Burger"></textarea>
     
     <br>
 
-    <button id="submit">Submit</button>
-
+    <button onClick="burgerFunction()" id="submit">Submit</button>
+        
     </div>
 
-    <script>
+    <script type="text/javascript">
+        function burgerFunction() {
+            let input = document.getElementById("input").value;
+            document.getElementById("burger-entry").innerHTML = input;
+            
+            let button = document.createElement("button");
+            button.innerHTML = "Devour";
+            let body = document.getElementById('button');
+            body.appendChild(button);
+        }
 
+        $("#button").on("click", function() {
+            $("#info").remove();
+        });
 
     </script>
 

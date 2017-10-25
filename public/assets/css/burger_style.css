@@ -15,6 +15,11 @@ textarea {
     border-radius: 10px;
 }
 
+#burger-entry {
+    margin-left: 520px;
+    color: white;
+}
+
 #submit {
     background: #a8d9ac;
     color: white;
