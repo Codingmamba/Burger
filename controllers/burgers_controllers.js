@@ -7,20 +7,27 @@ var path = require('path');
 router.get('/', function(req, res) {
     connection.query("SELECT * FROM burgers;", function(err, data) {
         if (err) {
-          return res.status(500).end();
-        }
+            return res.status(500).end();
+          }
         //res.json(data);
         res.render("index", { burgers: data });
       });
     });
 
-router.post("/", function(req, res) {
-    res.render('You sent, ' + req.body.burger_name);
-    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], function(err, result) {
-        if (err) throw err;
-    
-        res.redirect("/");
-      });
-    });
+router.get('/burgers', function (request, res) {
+        burger.selectAll(function (data) {
+            if (err) {
+                return res.status(500).end();
+              }
+            res.render('index', { burgers: data });
+        });
+    });    
+
+    // POST - /burgers/add return index.hbs
+router.post('/burgers/add', function (request, res) {
+        burger.insertBurger('burger_name', 'desc', 'cost', request.body.burger_name, function (err, result) {
+            res.redirect("/");
+        });
+});
 
 module.exports = router;
